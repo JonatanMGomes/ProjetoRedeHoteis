@@ -1,6 +1,6 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using ProjetoRedeHoteis.Lib.Data.Repositorios;
+using ProjetoRedeHoteis.Lib.Data.Repositorios.Interfaces;
 using ProjetoRedeHoteis.Lib.Models;
 using ProjetoRedeHoteis.Web.DTOs;
 using ProjetoRedeHoteis.Web.DTOs.RespostaHTTP;
@@ -11,8 +11,8 @@ namespace ProjetoRedeHoteis.Web.Controllers
     [Route("[controller]")]
     public class HotelController : ControllerBase
     {
-        private readonly HotelRepositorio _repositorio;
-        public HotelController(HotelRepositorio repositorio)
+        private readonly IHotelRepositorio _repositorio;
+        public HotelController(IHotelRepositorio repositorio)
         {
             _repositorio = repositorio;
         }
